@@ -1,6 +1,6 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
-let currentEggStock = 0
+
 
 func eggMenu() {
 
@@ -13,30 +13,40 @@ print("5. Exit")
 print("Choose an option:")
 
 }
-
+nonisolated(unsafe)
+var currentEggStock = 0
 func  addEggs(eggsInStock: Int, amount: Int) { 
 let lowerEggsLimit = 0
 let higherEggsLimit = 1000
 print("How many eggs would you like to add?")
 if let addEggs = readLine(), let numberOfEggs = Int(addEggs), numberOfEggs < higherEggsLimit, numberOfEggs > lowerEggsLimit {
 
-
 print("You have added \(numberOfEggs) to the total egg stock")
-let viewEggsStocks = numberOfEggs + currentEggStock
+currentEggStock = numberOfEggs + currentEggStock
 } else {
 print("That is an invalid input")
 addEggs(eggsInStock: currentEggStock, amount: 0)
 
 
 }
+func sellEggs() {
+    let sellEggsLowerLimit = 1
+    let sellEggsHigherLimit = currentEggStock
+    print("How many eggs do you want to sell?")
+    if let sellEggs = readLine(), let sellEggNumber = Int(sellEggs), sellEggNumber < sellEggsHigherLimit, sellEggNumber > sellEggsLowerLimit {
+        print("You have sold \(sellEggNumber)")
+} else {
+    print("That is an invalid input")
+    return sellEggs()
 
+}
 }
 
 @main
 struct SwiftPlayground {
     static func main() {
 
-        let isRunning = true
+        var isRunning = true
         let minimum = 0
         let maximum = 6
 
@@ -47,8 +57,18 @@ struct SwiftPlayground {
         if Option == 1 {
         addEggs(eggsInStock: 0, amount: 0) 
         }
+        if Option == 2{
+            sellEggs()
+        }
         if Option == 3 {
-        print("current eggs stocks are \(currentEggStock)")
+            var viewEggsStocks = currentEggStock
+        print("current eggs stocks are \(viewEggsStocks)")
+        }
+        if Option == 4 {
+
+        }
+        if Option == 5 {
+            isRunning = false
         }
         } 
         else {
@@ -57,4 +77,5 @@ struct SwiftPlayground {
         }
     }
 }
+} 
 }

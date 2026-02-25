@@ -25,7 +25,7 @@ nonisolated(unsafe)
     var eggsSold = 0
 
 ///creates a func to allow the user to add eggs to the shop
-func addEggs(eggsInStock: Int, amount: Int) {
+func addEggs(eggsInStock: Int) {
 
     //sets a lower limit for amount of eggs that can be inside the egg shop
     let lowerEggsLimit = 0
@@ -45,7 +45,7 @@ func addEggs(eggsInStock: Int, amount: Int) {
         //if users input is invalid then makes the user reinput
     } else {
         print("That is an invalid input")
-        addEggs(eggsInStock: currentEggStock, amount: 0)
+        addEggs(eggsInStock: currentEggStock)
 
     }
     ///create the func that lets the user sell eggs 
@@ -88,7 +88,7 @@ func addEggs(eggsInStock: Int, amount: Int) {
             //sets a maximum number for the user input on using the egg menu
             let maximum = 6
 
-            //starting a while loop to run until isRunning == false
+            //loop while end 
             while isRunning == true {
 
                 //calls the egg menu
@@ -103,7 +103,7 @@ func addEggs(eggsInStock: Int, amount: Int) {
                     if Option == 1 {
 
                         //calls addEggs function
-                        addEggs(eggsInStock: 0, amount: 0)
+                        addEggs(eggsInStock: 0)
                     }
 
                     //when option 2 is selected this code runs

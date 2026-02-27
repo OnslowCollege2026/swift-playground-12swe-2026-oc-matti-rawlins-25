@@ -88,7 +88,7 @@ func addEggs(eggsInStock: Int) {
             //sets a maximum number for the user input on using the egg menu
             let maximum = 6
 
-            //loop while end 
+            //loop while continue till the user press exit
             while isRunning == true {
 
                 //calls the egg menu
@@ -99,21 +99,21 @@ func addEggs(eggsInStock: Int) {
                     Option < maximum
                 {
                     
-                    //when option 1 is selected this code runs
+                    
                     if Option == 1 {
 
-                        //calls addEggs function
+                        //let's the user add egs to the current stock
                         addEggs(eggsInStock: 0)
                     }
 
-                    //when option 2 is selected this code runs
+                    
                     if Option == 2 {
 
-                        //calls the sellEggs function
+                        //let's the user sell eggs
                         sellEggs()
                     }
 
-                    //when option 3 is selected this code runs
+                    
                     if Option == 3 {
 
                         //makes the currentEggStock viewable to the user
@@ -121,14 +121,14 @@ func addEggs(eggsInStock: Int) {
                         print("current eggs stocks are \(viewEggsStocks)")
                     }
 
-                    //when option 4 is selected this code runs
+                    
                     if Option == 4 {
 
                         //shows the user the number of eggs that have been sold
                         print("You have sold \(eggsSold) eggs")
                     }
 
-                    //when option 5 is selected this code runs
+                    
                     if Option == 5 {
 
                         //resets currentEggStock to zero
@@ -141,13 +141,13 @@ func addEggs(eggsInStock: Int) {
                         print("Egg shop has been reset")
                     }
 
-                    //when option 6 is selected this code runs
+                    
                     if Option == 6 {
 
                         //thanks the user for using the egg shop
                         print("Thank you for using the egg shop")
 
-                        //sets isRunning to false and stops the while loop
+                        //stops the while loop when the user exits the interfact
                         isRunning = false
 
                     }

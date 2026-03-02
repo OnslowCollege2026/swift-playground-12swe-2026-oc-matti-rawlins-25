@@ -1,9 +1,48 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+func columnTotal(in room: [[Int]], column: Int) {
+  var sum = 0
+    for row in room {
+        for value in row {
+            sum += value
+        }
+    }
+}
 @main
 struct SwiftPlayground {
     static func main() {
-        print("Hello, world!")
+//         let temperature = [
+//         [1,2,3,4],
+//         [5,6,7,8],
+//         [9,10,11,12],
+//         ]
+//         print (temperature[0])
+//         print(temperature[1][2])
+//         print(temperature[2][0]) 
+//         print((temperature[2][0] + temperature[2][1] + temperature[2][2] + temperature[2][3]) / 4)
+//         print("-------------")
+//         let table = [
+//     [2, 4, 6],
+//     [8, 10, 12],
+//     [14, 16, 18]
+// ]
+// var total = 0
+// for row in table {
+//     for value in row {
+//         print(value)
+//         total = total + (value)
+//     }
+// }
+//     print("----------")
+//         print (total)
+//         print ("----------------")
+let table = [
+    [3, 5, 7, 9],
+    [2, 4],
+    [8, 6, 1],
+    [10]
+]
+print (columnTotal(room: table, column: [2]))
     }
 }

@@ -1,14 +1,9 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-func columnTotal(of matrix: [[Int]]) -> Int {
-    var sum = 0
-    for row in matrix {
-        for value in row {
-            sum += value
-        }
-    }
-    return sum
+func columnTotal(in matrix: [[Int]], column: Int) -> Int {
+    guard column >= 0 && column < matrix.count else { return 0 }
+    return matrix[column].reduce(0, +)
 }
 @main
 struct SwiftPlayground {

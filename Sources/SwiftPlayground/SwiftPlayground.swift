@@ -1,13 +1,14 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-func columnTotal(in room: [[Int]], column: Int) {
-  var sum = 0
-    for row in room {
+func columnTotal(of matrix: [[Int]]) -> Int {
+    var sum = 0
+    for row in matrix {
         for value in row {
             sum += value
         }
     }
+    return sum
 }
 @main
 struct SwiftPlayground {
@@ -43,6 +44,6 @@ let table = [
     [8, 6, 1],
     [10]
 ]
-print (columnTotal(room: table, column: [2]))
+
     }
 }

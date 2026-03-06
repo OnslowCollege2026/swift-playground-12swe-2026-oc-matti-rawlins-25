@@ -1,9 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-func columnTotal(in matrix: [[Int]], column: Int) -> Int {
-    guard column >= 0 && column < matrix.count else { return 0 }
-    return matrix[column].reduce(0, +)
+
 }
 @main
 struct SwiftPlayground {
@@ -39,6 +37,10 @@ let table = [
     [8, 6, 1],
     [10]
 ]
-
+func columnTotal(in table: [[Int]], column: Int) -> Int {
+    guard column >= 0 && column < table.count else { return 0 }
+    return table[column].reduce(0, +)
+    columnTotal(in: [[0]], column: 0)
     }
+}
 }

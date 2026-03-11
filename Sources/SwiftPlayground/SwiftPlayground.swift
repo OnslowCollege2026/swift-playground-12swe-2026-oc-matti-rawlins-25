@@ -31,16 +31,16 @@ struct SwiftPlayground {
 //     print("----------")
 //         print (total)
 //         print ("----------------")
-let table = [
-    [3, 5, 7, 9],
-    [2, 4],
-    [8, 6, 1],
-    [10]
-]
-func columnTotal(in table: [[Int]], column: Int) -> Int {
-    guard column >= 0 && column < table.count else { return 0 }
-    return table[column].reduce(0, +)
-    columnTotal(in: [[0]], column: 0)
-    }
+// let table = [
+//     [3, 5, 7, 9],
+//     [2, 4],
+//     [8, 6, 1],
+//     [10]
+// ]
+// func columnTotal(in table: [[Int]], column: Int) -> Int {
+//     guard column >= 0 && column < table.count else { return 0 }
+//     return table[column].reduce(0, +)
+//     columnTotal(in: [[0]], column: 0)
+//     }
 }
 }

@@ -63,8 +63,10 @@ func addEggs(eggsInStock: Int) {
             sellEggNumber < sellEggsHigherLimit, sellEggNumber > sellEggsLowerLimit
         {
             //tell the user how many eggs they have sold
-            print("You have sold \(sellEggNumber)")
+            print("You have sold \(sellEggNumber) number of eggs")
 
+            //updates the egg stock
+            currentEggStock = currentEggStock - sellEggNumber
             //updates the eggs sold number
             eggsSold = eggsSold + sellEggNumber
         } else {
@@ -116,9 +118,8 @@ func addEggs(eggsInStock: Int) {
                     
                     if Option == 3 {
 
-                        //makes the currentEggStock viewable to the user
-                        var viewEggsStocks = currentEggStock
-                        print("current eggs stocks are \(viewEggsStocks)")
+                        
+                        print("current eggs stocks are \(currentEggStock)")
                     }
 
                     

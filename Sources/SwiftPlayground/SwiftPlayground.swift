@@ -15,12 +15,12 @@ func eggMenu() {
 
 }
 //create variable to store the eggs in
-//nonisolated means the prograam won't crash because this variable is in a shared mutated state
+//nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
     var currentEggStock = 0
 
 //create variable to store the amount of eggs sold
-//nonisolated means the prograam won't crash because this variable is in a shared mutated state
+//nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
     var eggsSold = 0
 

@@ -4,6 +4,8 @@
 func printBoard() {
         var isRunning = true
         let size = 6
+        var missleNumber = 10
+        var enemyShips = 4
 var ocean = Array(repeating: Array(repeating: "~", count: size), count: size)
 var guesses = Array(repeating: Array(repeating: "~", count: size), count: size)
 
@@ -32,12 +34,23 @@ print("select your column between 1 - 6")
 return
         }
         let columnNumber = Int(userInput2)! - 1
-
+missleNumber = missleNumber - 1
         ocean[rowNumber][columnNumber] = "X"
 ocean.forEach { row in
 print(row)
-
 } 
+print("---------------------------------------------")
+guesses.forEach { row in
+print (row)
+}
+if missleNumber == 0 {
+        isRunning = false
+        print("You Lose!!!")
+}
+if enemyShips == 0 {
+        isRunning = false
+        print("You Win Good JOB!!!")
+}
 }
 
 print("---------------------------------------------")

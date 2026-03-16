@@ -15,7 +15,7 @@ print(row)
 
 }
 print("---------------------------------------------")
-guesses[1][1] = "S"
+guesses[0][0] = "S"
 guesses[5][2] = "S"
 guesses[4][4] = "S"
 guesses[3][4] = "S"
@@ -36,6 +36,10 @@ return
         let columnNumber = Int(userInput2)! - 1
 missleNumber = missleNumber - 1
         ocean[rowNumber][columnNumber] = "X"
+        if [rowNumber] == [0] && [columnNumber] == [0] {
+                print("You hit my battleship")
+                enemyShips = enemyShips - 1
+        }
 ocean.forEach { row in
 print(row)
 } 

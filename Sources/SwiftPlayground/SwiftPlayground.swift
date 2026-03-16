@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 func printBoard() {
-    var isRunning = true
+        var isRunning = true
         let size = 6
 var ocean = Array(repeating: Array(repeating: "~", count: size), count: size)
 var guesses = Array(repeating: Array(repeating: "~", count: size), count: size)
@@ -15,24 +15,30 @@ print(row)
 print("---------------------------------------------")
 guesses[1][1] = "S"
 guesses[5][2] = "S"
+guesses[4][4] = "S"
+guesses[3][4] = "S"
 guesses.forEach { row in
 print (row)
 }
 while isRunning == true {
 print("select your row between 1 - 6")
-        let userInput = readLine()!
+        guard let userInput = readLine() else {
+return
+        } 
         let rowNumber = Int(userInput)! - 1
 
 print("select your column between 1 - 6")
-        let userInput2 = readLine()!
+        guard let userInput2 = readLine() else {
+return
+        }
         let columnNumber = Int(userInput2)! - 1
 
-        ocean[rowNumber][columnNumber] = "S"
+        ocean[rowNumber][columnNumber] = "X"
 ocean.forEach { row in
 print(row)
 
 } 
-else 
+}
 
 print("---------------------------------------------")
 guesses[1][1] = "S"
@@ -41,7 +47,9 @@ guesses.forEach { row in
 print (row)
 }
 } 
-}
+
+
+
 @main
 struct SwiftPlayground {
     static func main() {

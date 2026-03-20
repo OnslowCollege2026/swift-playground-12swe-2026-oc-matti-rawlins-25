@@ -15,7 +15,8 @@ print("")
     print("4.Game advice")
     print("5.Quit")
 
-    guard let userInput = readLine(), if userInput >= menuLowerBoundary {}, if userInput <= menuUpperBoundary {}, else { 
+print("Enter a number between 1 and 5")
+    guard let userInput = readLine(), let UserInput2 = Int(userInput), UserInput2 >= menuLowerBoundary , UserInput2 <= menuUpperBoundary  else { 
         
 return
     } 
@@ -27,6 +28,10 @@ return
 @main
 struct SwiftPlayground {
     static func main() {
-    
+    var isRunning = true
+
+    while isRunning == true {
+    gameMenu()
+    }
     }
 }

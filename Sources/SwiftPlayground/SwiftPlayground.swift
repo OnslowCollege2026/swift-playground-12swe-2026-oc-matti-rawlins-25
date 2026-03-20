@@ -1,6 +1,9 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+let menuLowerBoundary = 1
+let menuUpperBoundary = 5
+
 func gameMenu() { 
     print("Welcome to incredible text based adventure!!!!!")
     print("Indie game fr fr")
@@ -12,8 +15,9 @@ print("")
     print("4.Game advice")
     print("5.Quit")
 
-    guard let userInput = readLine() else { 
-if userInput >= 1, if userInput <= 5
+    guard let userInput = readLine(), if userInput >= menuLowerBoundary {}, if userInput <= menuUpperBoundary {}, else { 
+        
+return
     } 
     
     

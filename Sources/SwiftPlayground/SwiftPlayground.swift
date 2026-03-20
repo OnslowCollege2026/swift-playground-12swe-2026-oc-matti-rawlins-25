@@ -48,7 +48,10 @@ print("3. look in the chest of drawers")
 print("4. look under the bed")
 print("What would you like to do first?")
 
-var userChoice = inputEngine(minimumChoice: 1, maximumChoice: 4)
+var userChoice = -1
+while userChoice == -1 {
+    inputEngine(minimumChoice: 1, maximumChoice: 4) 
+}
 if userChoice == 1{
 
 }

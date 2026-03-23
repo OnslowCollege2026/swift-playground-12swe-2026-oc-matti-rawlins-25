@@ -1,11 +1,16 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
-
+func inputEngine(minimumChoice: Int, maximumChoice: Int) -> Int{
+guard let userInput = readLine(), let userInput3 = Int(userInput) else {
+    return -1
+}
 @main
 struct SwiftPlayground {
     static func main() {
     // Constants and variables.
+var minChoice = 1
 
+var maxChoice = 4
 //randomizes the options for the answer
 var randomizeAnswers = Int.random(in:1...4)
 
@@ -31,7 +36,9 @@ var count = 0
 
     // loop until all of the vocabulary questions have been asked.
 while count < vocabulary.count{
-
+print("How do you say Hello in japanese?")
+inputEngine(minimumChoice: 1, maximumChoice: 4)
+print(vocabulary[0...5])
 }
 
     //show the question
@@ -43,4 +50,5 @@ while count < vocabulary.count{
     //check if the user guessed the correct answer.
     //If not, make a note of the question to ask again later.
     }
+}
 }

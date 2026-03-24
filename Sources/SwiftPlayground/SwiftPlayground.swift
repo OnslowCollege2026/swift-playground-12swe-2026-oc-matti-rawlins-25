@@ -2,6 +2,8 @@
 // https://docs.swift.org/swift-book
 nonisolated(unsafe)
 var isRunning = true
+nonisolated(unsafe)
+var roomLoop = true
 let menuLowerBoundary = 1
 let menuUpperBoundary = 5
 
@@ -47,12 +49,13 @@ print("1. look out the window")
 print("2. check yourself out in the mirror")
 print("3. look in the chest of drawers")
 print("4. look under the bed")
+print("5. Leave the room")
 print("What would you like to do first?")
 
-while isRunning == true{
+while roomLoop == true{
 var userChoice = -1
 while userChoice == -1 {
-    userChoice = inputEngine(minimumChoice: 1, maximumChoice: 4) 
+    userChoice = inputEngine(minimumChoice: 1, maximumChoice: 5) 
 }
 if userChoice == 1{
 print ("As you gaze out the window you see the familiar skyline of EastPort above you. When you decide to peer down you see at street leave the slow hustle and bustle of people walking towards the market stall on the north side of town.")
@@ -66,7 +69,8 @@ print("2. black")
 print("3. brown")
 print("4. grey")
 print("5. red")
-userChoice = inputEngine(minimumChoice: 1, maximumChoice: 5)
+let userHairColour = inputEngine(minimumChoice: 1, maximumChoice: 5)
+
 }
 if userChoice == 3{
 print ("You look in the chest of drawers and find only a set of blankets.")
@@ -74,6 +78,10 @@ print ("You look in the chest of drawers and find only a set of blankets.")
 if userChoice == 4{
 print ("You look under the bed and all you can see in the darkness under there is a rubber ducky.")
 }
+if userChoice == 5{
+    isRunning = false
+}
+print("")
 }
 }
 @main

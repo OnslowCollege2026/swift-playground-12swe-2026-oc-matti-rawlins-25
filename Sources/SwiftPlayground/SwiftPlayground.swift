@@ -1,9 +1,6 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
-func inputEngine(minimumChoice: Int, maximumChoice: Int) -> Int{
-guard let userInput = readLine(), let userInput3 = Int(userInput) else {
-    return -1
-}
+
 @main
 struct SwiftPlayground {
     static func main() {
@@ -17,7 +14,7 @@ var randomizeAnswers = Int.random(in:1...4)
     /// The vocabulary to test the user on.
     /// Each Inner array contains the English word, the correct answer in the target language, and then three incorrect answers
     let vocabulary = [
-        ["Hello",       "1.こんにちは", "2.ヒア", "3.さようなら", "4.いい"],
+        ["1.こんにちは", "2.ヒア", "3.さようなら", "4.いい"],
         ["Goodbye",     "1.さようなら", "2.じゃあね", "3.こんにちは", "4.市場"],
         ["Red",         "1.赤", "2.さようなら", "3.ヒア", "4.さようなら" ],
         ["White",         "1.白", "2.赤", "3.さようなら", "4.市場"],
@@ -37,8 +34,12 @@ var count = 0
     // loop until all of the vocabulary questions have been asked.
 while count < vocabulary.count{
 print("How do you say Hello in japanese?")
-inputEngine(minimumChoice: 1, maximumChoice: 4)
-print(vocabulary[0...5])
+print(vocabulary[0])
+let userInput = readLine(), userInput2 = Int(userInput)
+
+print("How do you Goodbye in japanese?")
+print(vocabulary[1])
+
 }
 
     //show the question

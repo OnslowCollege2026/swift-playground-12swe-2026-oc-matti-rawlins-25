@@ -1,6 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+var isRunning = true
 let menuLowerBoundary = 1
 let menuUpperBoundary = 5
 
@@ -48,6 +49,7 @@ print("3. look in the chest of drawers")
 print("4. look under the bed")
 print("What would you like to do first?")
 
+while isRunning == true{
 var userChoice = -1
 while userChoice == -1 {
     userChoice = inputEngine(minimumChoice: 1, maximumChoice: 4) 
@@ -73,7 +75,7 @@ if userChoice == 4{
 print ("You look under the bed and all you can see in the darkness under there is a rubber ducky.")
 }
 }
-
+}
 @main
 struct SwiftPlayground {
     static func main() {

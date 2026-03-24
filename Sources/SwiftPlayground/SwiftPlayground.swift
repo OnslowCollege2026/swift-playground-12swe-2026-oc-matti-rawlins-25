@@ -1,6 +1,6 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
-
+nonisolated(unsafe)
 var isRunning = true
 let menuLowerBoundary = 1
 let menuUpperBoundary = 5

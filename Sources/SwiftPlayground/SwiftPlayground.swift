@@ -35,11 +35,27 @@ var count = 0
 while count < vocabulary.count{
 print("How do you say Hello in japanese?")
 print(vocabulary[0])
-let userInput = readLine(), userInput2 = Int(userInput)
+if let userInput = readLine(), var userInput2 = Int(userInput),userInput2 >= minChoice, userInput2 <= maxChoice {
+    if userInput2 == 1{
+        print("That is correct")
+        count = count + 1
+    } else {
+        print("That is incorrect")
+        incorrectCount = incorrectCount + 1
+    }
+}
 
 print("How do you Goodbye in japanese?")
 print(vocabulary[1])
-
+if let userInput = readLine(), var userInput3 = Int(userInput),userInput3 >= minChoice, userInput3 <= maxChoice {
+    if userInput3 == 1{
+        print("That is correct")
+        count = count + 1
+    } else {
+        print("That is incorrect")
+        incorrectCount = incorrectCount + 1
+    }
+}
 }
 
     //show the question

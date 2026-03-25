@@ -63,7 +63,7 @@ print ("As you gaze out the window you see the familiar skyline of EastPort abov
 if userChoice == 2{
 print ("You walk up to the mirror and peer into it what do you see?")
 
-print("Is your hair colour?")
+print("What is your hair colour?")
 print("1. blonde")
 print("2. black")
 print("3. brown")
@@ -71,6 +71,21 @@ print("4. grey")
 print("5. red")
 let userHairColour = inputEngine(minimumChoice: 1, maximumChoice: 5)
 
+print("What is your eye colour?")
+print("1.Brown")
+print("2.Green")
+print("3.Blue")
+print("4.Light blue")
+print("5.Gray")
+print("6.Amber")
+let userEyeColour = inputEngine(minimumChoice: 1, maximumChoice: 6)
+
+print("What is your skin tone?")
+print("1.Pale")
+print("2.Tanned")
+print("3.Olive")
+print("4.Dark")
+let userSkinTone = inputEngine(minimumChoice: 1, maximumChoice: 4)
 }
 if userChoice == 3{
 print ("You look in the chest of drawers and find only a set of blankets.")
@@ -82,6 +97,12 @@ if userChoice == 5{
     isRunning = false
 }
 print("")
+print("What do you want to do now?")
+print("1. look out the window")
+print("2. check yourself out in the mirror")
+print("3. look in the chest of drawers")
+print("4. look under the bed")
+print("5. Leave the room")
 }
 }
 @main

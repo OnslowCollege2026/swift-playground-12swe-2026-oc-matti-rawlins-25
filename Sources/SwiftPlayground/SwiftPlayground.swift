@@ -15,8 +15,8 @@ var randomizeAnswers = Int.random(in:1...4)
     /// Each Inner array contains the English word, the correct answer in the target language, and then three incorrect answers
     let vocabulary = [
         ["1.こんにちは", "2.ヒア", "3.さようなら", "4.いい"],
-        ["Goodbye",     "1.さようなら", "2.じゃあね", "3.こんにちは", "4.市場"],
-        ["Red",         "1.赤", "2.さようなら", "3.ヒア", "4.さようなら" ],
+        ["1.さようなら", "2.じゃあね", "3.こんにちは", "4.市場"],
+        ["1.赤", "2.さようなら", "3.ヒア", "4.さようなら" ],
         ["White",         "1.白", "2.赤", "3.さようなら", "4.市場"],
         ["Name", "1.名前", "2.こんにちは", "3.じゃあね", "4.こんにちは"]
         ]
@@ -41,11 +41,12 @@ if let userInput = readLine(), var userInput2 = Int(userInput),userInput2 >= min
         count = count + 1
     } else {
         print("That is incorrect")
+        print("The answer was こんにちは")
         incorrectCount = incorrectCount + 1
     }
 }
 
-print("How do you Goodbye in japanese?")
+print("How do you say Goodbye in japanese?")
 print(vocabulary[1])
 if let userInput = readLine(), var userInput3 = Int(userInput),userInput3 >= minChoice, userInput3 <= maxChoice {
     if userInput3 == 1{
@@ -53,6 +54,19 @@ if let userInput = readLine(), var userInput3 = Int(userInput),userInput3 >= min
         count = count + 1
     } else {
         print("That is incorrect")
+        print("Answer was さようなら")
+        incorrectCount = incorrectCount + 1
+    }
+}
+print("How do you say Red in Japanese?")
+print(vocabulary[2])
+if let userInput = readLine(), var userInput4 = Int(userInput), userInput4 >= minChoice, userInput4 <= maxChoice{
+    if userInput4 == 1{
+        print("That is correct")
+        count = count + 1
+    } else {
+        print("That is incorrect")
+        print("The answer was 赤")
         incorrectCount = incorrectCount + 1
     }
 }
@@ -68,4 +82,4 @@ if let userInput = readLine(), var userInput3 = Int(userInput),userInput3 >= min
     //If not, make a note of the question to ask again later.
     }
 }
-}
+

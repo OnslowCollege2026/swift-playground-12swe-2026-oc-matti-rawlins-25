@@ -30,7 +30,7 @@
                 return lhsRank > rhsRank
             }
 
-            return lhs[0] >= rhs[0]
+            return lhs[0] <= rhs[0]
         }
 
         for guest in sortedList {
@@ -43,6 +43,7 @@
 struct SwiftPlayground {
     static func main() {
 
+let minimumValue = 1.0
 
 
 
@@ -60,11 +61,11 @@ struct SwiftPlayground {
         }
 
         print("Enter Amount: ", terminator: "")
-        if let amountInput = readLine(), let amount = Double(amountInput) {
+        if let amountInput = readLine(), let amount = Double(amountInput), amount >= minimumValue {
             guestList.append([nameInput, String(amount)])
         print("Added \(nameInput).")
         } else {
-
+            print("")
         }
 
     }

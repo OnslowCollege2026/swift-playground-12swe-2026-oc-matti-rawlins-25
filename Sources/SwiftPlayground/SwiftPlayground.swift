@@ -18,7 +18,7 @@
     }
 
     func printTierList(_ guestList: [[String]]) {
-        print("\n--- BROKEN PARTY TIER LIST ---")
+        print("\n--- PARTY TIER LIST ---")
 
         let sortedList = guestList.sorted { lhs, rhs in
             let lhsAmount = Double(lhs[1]) ?? 0
@@ -30,7 +30,7 @@
                 return lhsRank > rhsRank
             }
 
-            return lhs[0] > rhs[0]
+            return lhs[0] >= rhs[0]
         }
 
         for guest in sortedList {
@@ -60,11 +60,13 @@ struct SwiftPlayground {
         }
 
         print("Enter Amount: ", terminator: "")
-        let amountInput = readLine()!
-        let amount = Double(amountInput)!
-
-        guestList.append([nameInput, String(amount)])
+        if let amountInput = readLine(), let amount = Double(amountInput) {
+            guestList.append([nameInput, String(amount)])
         print("Added \(nameInput).")
+        } else {
+
+        }
+
     }
 
     printTierList(guestList)

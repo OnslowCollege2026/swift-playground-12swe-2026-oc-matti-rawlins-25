@@ -20,7 +20,7 @@ var randomizeAnswers = Int.random(in:1...4)
 
     /// The vocabulary to test the user on.
     /// Each Inner array contains the English word, the correct answer in the target language, and then three incorrect answers
-    let vocabulary = [
+    let vocabulary: [[String]] = [
         ["1.こんにちは", "2.ヒア", "3.さようなら", "4.いい"],
         ["1.さようなら", "2.じゃあね", "3.こんにちは", "4.市場"],
         ["1.赤", "2.さようなら", "3.ヒア", "4.さようなら" ],
@@ -37,25 +37,56 @@ var incorrectCount = 0
 //The number of questions that have been asked
 var count = 0
 
+var counter = 0
 
+var score = 0
 var wrongAnswer = [""]
 
     // loop until all of the vocabulary questions have been asked.
 while count < vocabulary.count{
 print("How do you say Hello in japanese?")
 print(vocabulary[0])
-if let userInput = readLine(), var userInput2 = Int(userInput),userInput2 >= minChoice, userInput2 <= maxChoice {
-    if userInput2 == 1{
-        print("That is correct")
-        count = count + 1
-    } else {
-        print("That is incorrect")
-        print("The answer was こんにちは")
-        incorrectCount = incorrectCount + 1
-        count = count + 1
-        wrongAnswer.append("Hello")
-    }
+let correcrWord = vocabulary[counter][1]
+let otherWords = vocabulary[counter].dropFirst(0)
+let allAnswers = vocabulary[counter].shuffled()
+if let userInput = readLine(), userInput.lowercased() == correcrWord.lowercased() {
+score = score + 1
+print("Yes, \(correcrWord) is correct!")
+} else {
+    incorrectIndices.append(counter)
+    print("Sorry \(correcrWord) was the correct answer")
 }
+counter = counter + 1
+}
+counter = 0
+while incorrectIndices.count > 0{
+let index = incorrectIndices[0]
+let correcrWord = vocabulary[index][1]
+let otherWords = vocabulary[index].dropFirst(0)
+let allAnswers = vocabulary[index].shuffled()
+if let userInput = readLine(), userInput.lowercased() == correcrWord.lowercased() {
+incorrectIndices.removeFirst()
+print("Yes, \(correcrWord) is correct!")
+} else {
+    print("Sorry \(correcrWord) was the correct answer")
+}
+}
+print("You have a score of \(score) out of \(vocabulary)")
+if Double(score) >= Double(vocabulary.count / 2) {
+    print("congratulations!!")
+} else {
+    print("Try again Next time.")
+}
+
+
+
+
+
+
+
+
+
+
 
 print("How do you say Goodbye in japanese?")
 print(vocabulary[1])
@@ -196,5 +227,5 @@ if let userInput = readLine(), var userInput6 = Int(userInput), userInput6 >= mi
     //check if the user guessed the correct answer.
     //If not, make a note of the question to ask again later.
     }
-}
+
 

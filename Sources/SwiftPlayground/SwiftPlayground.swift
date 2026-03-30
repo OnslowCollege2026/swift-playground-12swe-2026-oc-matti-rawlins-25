@@ -21,8 +21,8 @@
         print("\n--- PARTY TIER LIST ---")
 
         let sortedList = guestList.sorted { lhs, rhs in
-            let lhsAmount = Double(lhs[1]) ?? 0
-            let rhsAmount = Double(rhs[1]) ?? 0
+            let lhsAmount = Double(lhs[0]) ?? 0
+            let rhsAmount = Double(rhs[0]) ?? 0
             let lhsRank = rankIndex(from: lhsAmount)
             let rhsRank = rankIndex(from: rhsAmount)
 

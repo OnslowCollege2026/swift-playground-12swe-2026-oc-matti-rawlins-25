@@ -46,18 +46,34 @@ var wrongAnswer = [""]
 while count < vocabulary.count{
 print("How do you say Hello in japanese?")
 print(vocabulary[0])
-let correcrWord = vocabulary[counter][1]
+let correctWord = vocabulary[counter][1]
 let otherWords = vocabulary[counter].dropFirst(0)
 let allAnswers = vocabulary[counter].shuffled()
-if let userInput = readLine(), userInput.lowercased() == correcrWord.lowercased() {
+if let userInput = readLine(), userInput.lowercased() == correctWord.lowercased() {
 score = score + 1
-print("Yes, \(correcrWord) is correct!")
+print("Yes, \(correctWord) is correct!")
 } else {
     incorrectIndices.append(counter)
-    print("Sorry \(correcrWord) was the correct answer")
+    print("Sorry \(correctWord) was the correct answer")
 }
 counter = counter + 1
 }
+print("How do you say Goodbye in japanese?")
+print(vocabulary[1])
+if let userInput = readLine(), userInput.lowercased() == correctWord.lowercased() {
+    let correctWord = vocabulary[counter][1]
+let otherWords = vocabulary[counter].dropFirst(1)
+let allAnswers = vocabulary[counter].shuffled()
+score = score + 1
+        print("Yes, \(correctWord) is correct!")
+
+    } else {
+        print("That is incorrect")
+        print("Answer was さようなら")
+        incorrectCount = incorrectCount + 1
+        count = count + 1
+        wrongAnswer.append("Goodbye")
+    }
 counter = 0
 while incorrectIndices.count > 0{
 let index = incorrectIndices[0]
@@ -88,20 +104,8 @@ if Double(score) >= Double(vocabulary.count / 2) {
 
 
 
-print("How do you say Goodbye in japanese?")
-print(vocabulary[1])
-if let userInput = readLine(), var userInput3 = Int(userInput),userInput3 >= minChoice, userInput3 <= maxChoice {
-    if userInput3 == 1{
-        print("That is correct")
-        count = count + 1
-    } else {
-        print("That is incorrect")
-        print("Answer was さようなら")
-        incorrectCount = incorrectCount + 1
-        count = count + 1
-        wrongAnswer.append("Goodbye")
-    }
-}
+
+
 print("How do you say Red in Japanese?")
 print(vocabulary[2])
 if let userInput = readLine(), var userInput4 = Int(userInput), userInput4 >= minChoice, userInput4 <= maxChoice{

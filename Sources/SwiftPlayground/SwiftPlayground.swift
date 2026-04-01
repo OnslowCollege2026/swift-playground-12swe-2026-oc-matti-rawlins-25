@@ -60,10 +60,11 @@ counter = counter + 1
 }
 print("How do you say Goodbye in japanese?")
 print(vocabulary[1])
-if let userInput = readLine(), userInput.lowercased() == correctWord.lowercased() {
-    let correctWord = vocabulary[counter][1]
+let correctWord = vocabulary[counter][1]
 let otherWords = vocabulary[counter].dropFirst(1)
 let allAnswers = vocabulary[counter].shuffled()
+if let userInput = readLine(), userInput.lowercased() == correctWord.lowercased() {
+
 score = score + 1
         print("Yes, \(correctWord) is correct!")
 

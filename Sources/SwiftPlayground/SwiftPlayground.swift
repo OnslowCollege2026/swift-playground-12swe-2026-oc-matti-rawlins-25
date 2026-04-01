@@ -30,8 +30,8 @@
                 return lhsRank > rhsRank
             }
 
-            return lhs[0] <= rhs[0]
-        }
+            return lhs[0] >= rhs[0]
+        } 
 
         for guest in sortedList {
             let amount = Double(guest[1]) ?? 0

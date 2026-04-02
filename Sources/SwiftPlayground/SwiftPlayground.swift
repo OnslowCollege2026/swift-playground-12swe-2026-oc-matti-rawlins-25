@@ -33,8 +33,12 @@ return -1
     return UserInput2
     
 } 
+
 nonisolated(unsafe)
 var inventory = [""]
+
+nonisolated(unsafe)
+var money = 20
 
 func createGameState() {
 print("Enter your name")
@@ -65,7 +69,7 @@ print ("As you gaze out the window you see the familiar skyline of EastPort abov
 if userChoice == 2{
 print ("You walk up to the mirror and peer into it what do you see?")
 
-print("What is your hair colour?")
+print("What is your hair colour? (enter one of the words below)")
 print("blonde")
 print("black")
 print("brown")
@@ -73,7 +77,7 @@ print("grey")
 print("red")
 let userHairColour = inputEngine(minimumChoice: 1, maximumChoice: 5)
 
-print("What is your eye colour?")
+print("What is your eye colour? (enter one of the words below)")
 print("Brown")
 print("Green")
 print("Blue")
@@ -82,7 +86,7 @@ print("Gray")
 print("Amber")
 let userEyeColour = inputEngine(minimumChoice: 1, maximumChoice: 6)
 
-print("What is your skin tone?")
+print("What is your skin tone? (enter one of the words below)")
 print("Pale")
 print("Tanned")
 print("Olive")
@@ -106,7 +110,8 @@ if userChoice == 2{
 inventory.forEach {item in
 if item == ("Arcana orb") {
     print("You already find the item")
-} else {print("You find an arcane orb and pick it up")
+} else {
+    print("You find an arcane orb and pick it up")
 inventory.append("Arcana orb")
 }}
 }
@@ -114,7 +119,8 @@ if userChoice == 3{
 inventory.forEach {item in
 if item == ("Blankets") {
     print("You already find the item")
-} else {print("You find an blankets and pick it up")
+} else {
+    print("You find an blankets and pick it up")
 inventory.append("Blankets")
 }}
 }
@@ -123,6 +129,26 @@ print ("You look under the bed and all you can see in the darkness under there i
 }
 if userChoice == 5{
     print("As you walk down the stairs outside your rooms door you smell the thick scent of beef stew and fresh bread and see Paul the barkeeper pouring the drinks and his miads walk around the tavern delivering meals and asking if people want second breakfast")
+    print("")
+    print("What will you do now?")
+    print("1.Go to the innkeeper")
+    print("2.Sit down at a table in the dark corner")
+    print("3.Sit down at a table in front of the fire")
+    print("4.Go outside and look up and down the street")
+    let userChoice = inputEngine(minimumChoice: 1, maximumChoice: 4)
+
+    if userChoice == 1{
+
+    }
+    if userChoice == 2{
+
+    }
+    if userChoice == 3{
+
+    }
+    if userChoice == 4{
+
+    }
 }
 }
 print("")

@@ -71,7 +71,7 @@ func addKumara(kumaraInStock: Int) {
             sellKumaraNumber < sellKumaraHigherLimit, sellKumaraNumber > sellKumaraLowerLimit
         {
             //tell the user how many kumara they have sold
-            print("A customer hasbrought \(sellKumaraNumber)kg of kumara")
+            print("A customer has brought \(sellKumaraNumber)kg of kumara")
             print("The customer used \(bagsBrought) bags to carry the \(sellKumaraNumber)kg of kumara they brought")
 
             //updates the kumara stock
@@ -90,7 +90,7 @@ func addKumara(kumaraInStock: Int) {
     struct SwiftPlayground {
         static func main() {
 
-            //sets isRunning to true
+            //allows the while loop in the egg menu to start
             var isRunning = true
 
             //sets a minimum number for the user input on using the kumara menu
@@ -113,7 +113,7 @@ func addKumara(kumaraInStock: Int) {
                     
                     if Option == 1 {
 
-                        //let's the user add egs to the current stock
+                        //let's the user add kumara to the current stock
                         addKumara(kumaraInStock: 0)
                     }
 
@@ -133,7 +133,7 @@ func addKumara(kumaraInStock: Int) {
 
                     
                     if Option == 4 {
-
+print("Previous sales")
                     }
 
                     

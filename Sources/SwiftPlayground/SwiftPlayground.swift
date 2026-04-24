@@ -74,32 +74,12 @@ func addKumara(kumaraInStock: Int) {
         //asks user for their input and puts requirements
         print("How many kumara do you want to buy in kgs ($3 per kg)?")
         if let buyKumara = readLine(), let buyKumaraNumber = Int(buyKumara),
-            buyKumaraNumber <= buyKumaraHigherLimit, buyKumaraNumber > buyKumaraLowerLimit
-        {
+            buyKumaraNumber <= buyKumaraHigherLimit, buyKumaraNumber > buyKumaraLowerLimit{
+        
             // turns amount of kumara brought into money
             let costOfKumara = buyKumaraNumber * 3
 
-            }else {
-            //if users input is invalid informs user and makes them go again
-            print("That is an invalid input")
-            return buyKumara()
-
-        }
-            print("How many bags would you like to buy (bags hold 5kgs of kumara)?")
-            if let buyBags = readLine(), let buyBagsNumber = Int(buyBags),
-                buyBagsNumber <= buyBagsLowerLimit, buyBagsNumber >= buyBagsUpperLimit{
-             //turns bags brought into a double to be used in cost calculations
-                let bagsBrought = Double(buyBagsNumber)
-                let costOfBags = bagsBrought * 0.20
-                //tell the user how much money user owes for both kumara and bags
-                print("You brought \(buyKumaraNumber) which costs $\(costOfKumara)")
-                print("You brought \(buyBagsNumber) which costs $ \(costOfBags)")
-
-                //updates the kumara stock
-                currentKumaraStock = currentKumaraStock - buyKumaraNumber
-                //updates the kumara sold number
-                kumaraSold = kumaraSold + buyKumaraNumber
-                }
+        print("how many bags would you like to buy (Bags ?")
             } 
             else {
             //if users input is invalid informs user and makes them go again

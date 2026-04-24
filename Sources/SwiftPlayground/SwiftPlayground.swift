@@ -37,16 +37,13 @@ func addKumara(kumaraInStock: Int) {
     //sets a higher limit for amount of kumara that can be inside the kumara stall
     let higherKumaraLimit = 50
 
-    //sets the limit for number of bags purchased before the stall runs out of stock
-    let bagsBroughtLimit = 5000
-
-
-//Ask the user for their input and sets requirements for their input
+    //Ask the user for their input and sets requirements for their input
     print("How many kg of kumara would you like to add?")
-    if let addKumara = readLine(), let numberOfKumara = Int(addKumara), numberOfKumara < higherKumaraLimit,
+    if let addKumara = readLine(), let numberOfKumara = Int(addKumara),
+        numberOfKumara <= higherKumaraLimit,
         numberOfKumara > lowerKumaraLimit
     {
-//adds the user input into the current kumara stall stock
+        //adds the user input into the current kumara stall stock
         print("You have added \(numberOfKumara)kg to the kumara container")
         currentKumaraStock = numberOfKumara + currentKumaraStock
 
@@ -56,32 +53,58 @@ func addKumara(kumaraInStock: Int) {
         addKumara(kumaraInStock: currentKumaraStock)
 
     }
-    ///create the func that lets the user sell kumara
-    func sellKumara() {
+    ///create the func that lets the user buy kumara
+    func buyKumara() {
 
         //sets the lowest limit of selling kumara
-        let sellKumaraLowerLimit = 1
+        let buyKumaraLowerLimit = 1
 
         //sets the highest limit of selling kumara as the total of the current kumara stock
-        let sellKumaraHigherLimit = currentKumaraStock
+        let buyKumaraHigherLimit = currentKumaraStock
 
-        //asks user for their input and puts requirements 
-        print("How many kumara do you want to sell?")
-        if let sellKumara = readLine(), let sellKumaraNumber = Int(sellKumara),
-            sellKumaraNumber < sellKumaraHigherLimit, sellKumaraNumber > sellKumaraLowerLimit
+        //set the maximum amount of bags that can be brought
+        let bagsBroughtLimit = 5000
+
+        //set the lowest limit of bags that can be brought
+        let buyBagsLowerLimit = 1
+
+        //set the highest limit of bags that can be brought
+        let buyBagsUpperLimit = bagsBroughtLimit
+
+        //asks user for their input and puts requirements
+        print("How many kumara do you want to buy in kgs ($3 per kg)?")
+        if let buyKumara = readLine(), let buyKumaraNumber = Int(buyKumara),
+            buyKumaraNumber <= buyKumaraHigherLimit, buyKumaraNumber > buyKumaraLowerLimit
         {
-            //tell the user how many kumara they have sold
-            print("A customer has brought \(sellKumaraNumber)kg of kumara")
-            print("The customer used \(bagsBrought) bags to carry the \(sellKumaraNumber)kg of kumara they brought")
+            // turns amount of kumara brought into money
+            let costOfKumara = buyKumaraNumber * 3
 
-            //updates the kumara stock
-            currentKumaraStock = currentKumaraStock - sellKumaraNumber
-            //updates the kumara sold number
-            kumaraSold = kumaraSold + sellKumaraNumber
-        } else {
+            }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")
-            return sellKumara()
+            return buyKumara()
+
+        }
+            print("How many bags would you like to buy (bags hold 5kgs of kumara)?")
+            if let buyBags = readLine(), let buyBagsNumber = Int(buyBags),
+                buyBagsNumber <= buyBagsLowerLimit, buyBagsNumber >= buyBagsUpperLimit{
+             //turns bags brought into a double to be used in cost calculations
+                let bagsBrought = Double(buyBagsNumber)
+                let costOfBags = bagsBrought * 0.20
+                //tell the user how much money user owes for both kumara and bags
+                print("You brought \(buyKumaraNumber) which costs $\(costOfKumara)")
+                print("You brought \(buyBagsNumber) which costs $ \(costOfBags)")
+
+                //updates the kumara stock
+                currentKumaraStock = currentKumaraStock - buyKumaraNumber
+                //updates the kumara sold number
+                kumaraSold = kumaraSold + buyKumaraNumber
+                }
+            } 
+            else {
+            //if users input is invalid informs user and makes them go again
+            print("That is an invalid input")
+            return buyKumara()
 
         }
     }
@@ -109,34 +132,28 @@ func addKumara(kumaraInStock: Int) {
                 if let userInput = readLine(), let Option = Int(userInput), Option > minimum,
                     Option < maximum
                 {
-                    
-                    
+
                     if Option == 1 {
 
                         //let's the user add kumara to the current stock
                         addKumara(kumaraInStock: 0)
                     }
 
-                    
                     if Option == 2 {
 
                         //let's the user sell kumara
-                        sellKumara()
+                        buyKumara()
                     }
 
-                    
                     if Option == 3 {
 
-                        
-                        print("current kg of kumara in the container is \(currentKumaraStock)kg")
+                        print("current kgs of kumara in the container is \(currentKumaraStock)kgs")
                     }
 
-                    
                     if Option == 4 {
-print("Previous sales")
+                        print("Previous sales")
                     }
 
-                    
                     if Option == 5 {
 
                         //thanks the user for buying from the kumara stall

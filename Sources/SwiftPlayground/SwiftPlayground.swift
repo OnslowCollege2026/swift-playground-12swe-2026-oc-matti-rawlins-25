@@ -21,12 +21,12 @@ nonisolated(unsafe)
 //create variable to store the amount of kumara sold
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var kumaraSold = 0
+    var kumaraSold = [[]]
 
 //create variable to store the amount of bags brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var bagsBrought = 0
+    var bagsBrought = [[]]
 
 ///creates a func to allow the user to add kumara to the shop
 func addKumara(kumaraInStock: Int) {
@@ -82,21 +82,20 @@ func addKumara(kumaraInStock: Int) {
         print("how many bags would you like to buy (Bags cost 0.20) ?")
         if let buyBags = readLine(), let buyBagsNumber = Int(buyBags), buyBagsNumber <= buyBagsUpperLimit, buyBagsNumber >= buyBagsLowerLimit{
             
-            let buyBagsQuanity = Double(buyBagsNumber)
-            let costOfBags = buyBagsQuanity * 0.20
+            let bagsBroughtQuanity = Double(buyBagsNumber)
+            let costOfBags = bagsBroughtQuanity * 0.20
             let totalCost = costOfBags + costOfKumara
             print("The cost for kgs of kumara brought is $\(costOfKumara)")
             print("The cost for bags is $\(costOfBags)")
             print("The total cost is $\(totalCost)")
+            bagsBrought = [[buyBagsNumber]]
+            kumaraSold = [[buyKumaraNumber]]
             }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")
             return sellKumara()
             }
             currentKumaraStock = currentKumaraStock - buyKumaraNumber
-            var bagsSold = ()
-            var kumaraSold = ()
-            bagsSold = ()
         }
     }
 
@@ -143,6 +142,8 @@ func addKumara(kumaraInStock: Int) {
 
                     if Option == 4 {
                         print("Previous sales")
+                        print(bagsBrought)
+            print(kumaraSold)
                     }
 
                     if Option == 5 {

@@ -156,8 +156,6 @@ func addKumara(kumaraInStock: Int) {
                     //if users input is invalid tell them and makes them run the code again
                     print("Select a valid option")
                     return kumaraMenu()
- 
-
                     }
                         
                     }

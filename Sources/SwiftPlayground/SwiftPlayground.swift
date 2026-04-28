@@ -93,7 +93,7 @@ func addKumara(kumaraInStock: Int) {
             print("That is an invalid input")
             return sellKumara()
             }
-            let currentKumaraStock = currentKumaraStock - buyKumaraNumber
+            currentKumaraStock = currentKumaraStock - buyKumaraNumber
         }
     }
 

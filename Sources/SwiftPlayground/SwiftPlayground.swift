@@ -91,9 +91,10 @@ print("Tanned")
 print("Honey")
 print("Olive")
 print("Dark")
-let userSkinTone = readLine()
+if let userSkinTone = readLine() {
 
 print("As you peer into the mirror you see your \(userEyeColour) eyes wondering your face looking at your clean \(userSkinTone) skin and your messy \(userHairColour) hair")
+}
 }
 if userChoice == 3{
 print ("You look in the chest of drawers and find only a set of blankets.")
@@ -128,10 +129,10 @@ if userChoice == 4{
 print ("You look under the bed and all you can see in the darkness under there is a rubber ducky.")
 }
 if userChoice == 5{
-    print("As you walk down the stairs outside your rooms door you smell the thick scent of beef stew and fresh bread and see Paul the barkeeper pouring the drinks and his miads walk around the tavern delivering meals and asking if people want second breakfast")
+    print("As you walk down the stairs outside your rooms door you smell the thick scent of beef stew and fresh bread and see Paul the barkeeper pouring the drinks and his maids walk around the tavern delivering meals and asking if people want second breakfast")
     print("")
     print("What will you do now?")
-    print("1.Go to the innkeeper")
+    print("1.Go to the bar")
     print("2.Sit down at a table in the dark corner")
     print("3.Sit down at a table in front of the fire")
     print("4.Go outside and look up and down the street")

@@ -54,7 +54,7 @@ func addKumara(kumaraInStock: Int) {
 
     }
     ///create the func that lets the user buy kumara
-    func buyKumara() {
+    func sellKumara() {
 
         //sets the lowest limit of selling kumara
         let buyKumaraLowerLimit = 1
@@ -77,15 +77,22 @@ func addKumara(kumaraInStock: Int) {
             buyKumaraNumber <= buyKumaraHigherLimit, buyKumaraNumber > buyKumaraLowerLimit{
         
             // turns amount of kumara brought into money
-            let costOfKumara = buyKumaraNumber * 3
+            let costOfKumara = Double(buyKumaraNumber) * 3.0
 
-        print("how many bags would you like to buy (Bags ?")
-            } 
-            else {
+        print("how many bags would you like to buy (Bags cost 0.20) ?")
+        if let buyBags = readLine(), let buyBagsNumber = Int(buyBags), buyBagsNumber <= buyBagsUpperLimit, buyBagsNumber >= buyBagsLowerLimit{
+            
+            let buyBagsQuanity = Double(buyBagsNumber)
+            let costOfBags = buyBagsQuanity * 0.20
+            let totalCost = costOfBags + costOfKumara
+            print("\(costOfKumara)")
+            print("\(costOfBags)")
+            print("The total cost is \(totalCost)")
+            }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")
-            return buyKumara()
-
+            return sellKumara()
+            }
         }
     }
 
@@ -122,7 +129,7 @@ func addKumara(kumaraInStock: Int) {
                     if Option == 2 {
 
                         //let's the user sell kumara
-                        buyKumara()
+                        sellKumara()
                     }
 
                     if Option == 3 {

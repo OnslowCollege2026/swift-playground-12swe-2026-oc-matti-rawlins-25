@@ -57,4 +57,3 @@ for row in newTable {
 }
 
 }
-}

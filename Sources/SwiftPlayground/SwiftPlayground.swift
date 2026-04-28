@@ -94,6 +94,9 @@ func addKumara(kumaraInStock: Int) {
             return sellKumara()
             }
             currentKumaraStock = currentKumaraStock - buyKumaraNumber
+            var bagsSold = ()
+            var kumaraSold = ()
+            bagsSold = ()
         }
     }
 

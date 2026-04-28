@@ -85,9 +85,9 @@ func addKumara(kumaraInStock: Int) {
             let buyBagsQuanity = Double(buyBagsNumber)
             let costOfBags = buyBagsQuanity * 0.20
             let totalCost = costOfBags + costOfKumara
-            print("\(costOfKumara)")
-            print("\(costOfBags)")
-            print("The total cost is \(totalCost)")
+            print("The cost for kgs of kumara brought is $\(costOfKumara)")
+            print("The cost for bags is $\(costOfBags)")
+            print("The total cost is $\(totalCost)")
             }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")

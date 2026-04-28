@@ -108,7 +108,7 @@ func addKumara(kumaraInStock: Int) {
             let minimum = 0
 
             //sets a maximum number for the user input on using the kumara menu
-            let maximum = 5
+            let maximum = 6
 
             //loop while continue till the user press exit
             while isRunning == true {
@@ -155,9 +155,12 @@ func addKumara(kumaraInStock: Int) {
 
                     //if users input is invalid tell them and makes them run the code again
                     print("Select a valid option")
-                    return (kumaraMenu())
+                    return kumaraMenu()
+ 
+
+                    }
+                        
+                    }
                 }
             }
         }
-    }
-}

@@ -93,7 +93,7 @@ func addKumara(kumaraInStock: Double) {
             print("The cost for kgs of kumara brought is $\(costOfKumara)")
             print("The cost for bags is $\(costOfBags)")
             print("The total cost is $\(totalCost)")
-        ownerInfoBags.append([costOfBags])
+        ownerInfoBags.append([bagsBroughtQuanity])
         ownerInfoKumara.append([kumaraNumber])
             }else {
             //if users input is invalid informs user and makes them go again

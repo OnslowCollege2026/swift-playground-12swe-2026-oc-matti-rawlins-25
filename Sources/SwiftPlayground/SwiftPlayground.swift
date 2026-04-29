@@ -147,7 +147,7 @@ func addKumara(kumaraInStock: Double) {
 
                     if Option == 4 {
                         print("Previous sales")
-// forEach.ownerInfoBags
+// forEach.ownerInfoBags slide 7 last year
                         print("The customer brought\(ownerInfoBags) bags and \(ownerInfoKumara)kgs of kumara")
 
                         print("The average weight sold is ")

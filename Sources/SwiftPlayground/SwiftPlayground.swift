@@ -21,7 +21,12 @@ nonisolated(unsafe)
 //create variable to store the amount of bags brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var ownerInfo = [[]]
+    var ownerInfoBags = [[]]
+
+//create variable to store the amount of kumara brought
+//nonisolated means the program won't crash because this variable is in a shared mutated state
+nonisolated(unsafe)
+    var ownerInfoKumara = [[]]
 
 ///creates a func to allow the user to add kumara to the shop
 func addKumara(kumaraInStock: Double) {
@@ -88,7 +93,8 @@ func addKumara(kumaraInStock: Double) {
             print("The cost for kgs of kumara brought is $\(costOfKumara)")
             print("The cost for bags is $\(costOfBags)")
             print("The total cost is $\(totalCost)")
-        ownerInfo.append([costOfBags]);([buyKumaraNumber])
+        ownerInfoBags.append([costOfBags])
+        ownerInfoKumara.append([kumaraNumber])
             }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")
@@ -141,7 +147,11 @@ func addKumara(kumaraInStock: Double) {
 
                     if Option == 4 {
                         print("Previous sales")
-                        print(ownerInfo)
+forEach.ownerInfoBags
+                        print("The customer brought\(ownerInfoBags) bags and \(ownerInfoKumara)kgs of kumara")
+
+                        print("The average weight sold is ")
+                        print("The average amount made per bag is ")
                     }
 
                     if Option == 5 {

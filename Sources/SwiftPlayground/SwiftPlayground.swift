@@ -16,33 +16,31 @@ func kumaraMenu() {
 //create variable to store the kumara in
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var currentKumaraStock = 0
-
-//create variable to store the amount of kumara sold
-//nonisolated means the program won't crash because this variable is in a shared mutated state
-nonisolated(unsafe)
-    var kumaraSold = [[]]
+    var currentKumaraStock = 0.0
 
 //create variable to store the amount of bags brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var bagsBrought = [[]]
+    var ownerInfo = [[]]
 
 ///creates a func to allow the user to add kumara to the shop
-func addKumara(kumaraInStock: Int) {
+func addKumara(kumaraInStock: Double) {
 
     //sets a lower limit for amount of kumara that can be inside the kumara stall
-    let lowerKumaraLimit = 0
+    let lowerKumaraLimit = 0.1
 
     //sets a higher limit for amount of kumara that can be inside the kumara stall
-    let higherKumaraLimit = 50
+    let higherKumaraLimit = 50.0
+
+//setting the invalid upper boundary
+    let aboveKumaraLimit = 50.1
 
     //Ask the user for their input and sets requirements for their input
     print("How many kg of kumara would you like to add?")
-    if let addKumara = readLine(), let numberOfKumara = Int(addKumara),
+    if let addKumara = readLine(), let numberOfKumara = Double(addKumara),
         numberOfKumara <= higherKumaraLimit,
         numberOfKumara > lowerKumaraLimit
-    {
+    { 
         //adds the user input into the current kumara stall stock
         print("You have added \(numberOfKumara)kg to the kumara container")
         currentKumaraStock = numberOfKumara + currentKumaraStock
@@ -60,7 +58,7 @@ func addKumara(kumaraInStock: Int) {
         let buyKumaraLowerLimit = 1
 
         //sets the highest limit of selling kumara as the total of the current kumara stock
-        let buyKumaraHigherLimit = currentKumaraStock
+        let buyKumaraHigherLimit = Int(currentKumaraStock)
 
         //set the maximum amount of bags that can be brought
         let bagsBroughtLimit = 5000
@@ -79,6 +77,9 @@ func addKumara(kumaraInStock: Int) {
             // turns amount of kumara brought into money
             let costOfKumara = Double(buyKumaraNumber) * 3.0
 
+            //converting Int to double to adjust stock
+            let kumaraNumber = Double(buyKumaraNumber)
+
         print("how many bags would you like to buy (Bags cost 0.20) ?")
         if let buyBags = readLine(), let buyBagsNumber = Int(buyBags), buyBagsNumber <= buyBagsUpperLimit, buyBagsNumber >= buyBagsLowerLimit{
             
@@ -88,14 +89,13 @@ func addKumara(kumaraInStock: Int) {
             print("The cost for kgs of kumara brought is $\(costOfKumara)")
             print("The cost for bags is $\(costOfBags)")
             print("The total cost is $\(totalCost)")
-            bagsBrought = [[buyBagsNumber]]
-            kumaraSold = [[buyKumaraNumber]]
+        ownerInfo.append([costOfBags]);([buyKumaraNumber])
             }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")
             return sellKumara()
             }
-            currentKumaraStock = currentKumaraStock - buyKumaraNumber
+            currentKumaraStock = currentKumaraStock - kumaraNumber
         }
     }
 
@@ -142,8 +142,7 @@ func addKumara(kumaraInStock: Int) {
 
                     if Option == 4 {
                         print("Previous sales")
-                        print(bagsBrought)
-            print(kumaraSold)
+                        print(ownerInfo)
                     }
 
                     if Option == 5 {
@@ -159,7 +158,7 @@ func addKumara(kumaraInStock: Int) {
 
                     //if users input is invalid tell them and makes them run the code again
                     print("Select a valid option")
-                    return kumaraMenu()
+                    continue
                     }
                         
                     }

@@ -38,13 +38,16 @@ func addKumara(kumaraInStock: Double) {
     //Ask the user for their input and sets requirements for their input
     print("How many kg of kumara would you like to add?")
     if let addKumara = readLine(), let numberOfKumara = Double(addKumara),
-        numberOfKumara <= higherKumaraLimit,
+        numberOfKumara >= higherKumaraLimit,
         numberOfKumara > lowerKumaraLimit
     { 
+        if numberOfKumara + currentKumaraStock == aboveKumaraLimit{
+            print("That is an invalid input")
+        addKumara(kumaraInStock: currentKumaraStock)
+        }
         //adds the user input into the current kumara stall stock
         print("You have added \(numberOfKumara)kg to the kumara container")
         currentKumaraStock = numberOfKumara + currentKumaraStock
-
         //if users input is invalid then makes the user reinput
     } else {
         print("That is an invalid input")

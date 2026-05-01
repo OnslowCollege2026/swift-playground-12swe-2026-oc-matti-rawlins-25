@@ -21,12 +21,12 @@ nonisolated(unsafe)
 //create variable to store the amount of bags brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var ownerInfoBags = [[]]
+    var ownerInfoBags = [0.01]
 
 //create variable to store the amount of kumara brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var ownerInfoKumara = [[]]
+    var ownerInfoKumara = [0.01]
 
 ///creates a func to allow the user to add kumara to the shop
 func addKumara(kumaraInStock: Double) {
@@ -41,9 +41,9 @@ func addKumara(kumaraInStock: Double) {
     let aboveKumaraLimit = 50.1
 
     //Ask the user for their input and sets requirements for their input
-    print("How many kg of kumara would you like to add?")
+    print("How many kgs of kumara would you like to add?")
     if let addKumara = readLine(), let numberOfKumara = Double(addKumara),
-        numberOfKumara >= higherKumaraLimit,
+        numberOfKumara <= higherKumaraLimit,
         numberOfKumara > lowerKumaraLimit, currentKumaraStock + numberOfKumara != aboveKumaraLimit
     { 
         //adds the user input into the current kumara stall stock
@@ -59,10 +59,10 @@ func addKumara(kumaraInStock: Double) {
     func sellKumara() {
 
         //sets the lowest limit of selling kumara
-        let buyKumaraLowerLimit = 1
+        let buyKumaraLowerLimit = 0.1
 
         //sets the highest limit of selling kumara as the total of the current kumara stock
-        let buyKumaraHigherLimit = Int(currentKumaraStock)
+        let buyKumaraHigherLimit = Double(currentKumaraStock)
 
         //set the maximum amount of bags that can be brought
         let bagsBroughtLimit = 5000
@@ -75,32 +75,37 @@ func addKumara(kumaraInStock: Double) {
 
         //asks user for their input and puts requirements
         print("How many kumara do you want to buy in kgs ($3 per kg)?")
-        if let buyKumara = readLine(), let buyKumaraNumber = Int(buyKumara),
-            buyKumaraNumber <= buyKumaraHigherLimit, buyKumaraNumber > buyKumaraLowerLimit{
+        if let buyKumara = readLine(), let buyKumaraNumber = Double(buyKumara),
+            buyKumaraNumber <= buyKumaraHigherLimit, buyKumaraNumber >= buyKumaraLowerLimit{
         
             // turns amount of kumara brought into money
+            
             let costOfKumara = Double(buyKumaraNumber) * 3.0
 
             //converting Int to double to adjust stock
             let kumaraNumber = Double(buyKumaraNumber)
 
-        print("how many bags would you like to buy (Bags cost 0.20) ?")
+        print("how many bags would you like to buy (Bags cost 0.20 and hold 5kgs) ?")
         if let buyBags = readLine(), let buyBagsNumber = Int(buyBags), buyBagsNumber <= buyBagsUpperLimit, buyBagsNumber >= buyBagsLowerLimit{
             
             let bagsBroughtQuanity = Double(buyBagsNumber)
             let costOfBags = bagsBroughtQuanity * 0.20
             let totalCost = costOfBags + costOfKumara
-            print("The cost for kgs of kumara brought is $\(costOfKumara)")
-            print("The cost for bags is $\(costOfBags)")
+            print("The cost for \(buyKumaraNumber)kgs of kumara brought is $\(costOfKumara)")
+            print("The cost for \(bagsBroughtQuanity)bags is $\(costOfBags)")
             print("The total cost is $\(totalCost)")
-        ownerInfoBags.append([bagsBroughtQuanity])
-        ownerInfoKumara.append([kumaraNumber])
+        ownerInfoBags.append(bagsBroughtQuanity)
+        ownerInfoKumara.append(kumaraNumber)
             }else {
             //if users input is invalid informs user and makes them go again
             print("That is an invalid input")
             return sellKumara()
             }
             currentKumaraStock = currentKumaraStock - kumaraNumber
+        } else {
+            //if users input is invalid informs user and makes them go again
+            print("That is an invalid input")
+            return sellKumara()
         }
     }
 
@@ -148,14 +153,23 @@ func addKumara(kumaraInStock: Double) {
                     if Option == 4 {
                         print("Previous sales")
                         ownerInfoBags.enumerated().forEach { index, number in
+                        let doubleNumber = Double(number)
+                        if doubleNumber == 0.01{
+                            ownerInfoBags.remove(at: index)
+                        }
 print("The \(index+1) customer brought\(number)bags")
                         }
-                        ownerInfoBags.enumerated().forEach { index, number in
+                        ownerInfoKumara.enumerated().forEach { index, number in
+                        let doubleNumber2 = Double(number)
+                        if doubleNumber2 == 0.01 {
+                            ownerInfoKumara.remove(at: index)
+                        }
 print("The \(index+1) customer brought \(number)kgs of kumara")
                         }
-// forEach.ownerInfoBags slide 7 last year
-                        //print("The customer brought\(ownerInfoBags) bags and \(ownerInfoKumara)kgs of kumara")
-
+let totalSalesWeight = ownerInfoKumara
+let totalBagNumber = ownerInfoBags
+print(totalSalesWeight)
+print(totalBagNumber)
                         print("The average weight sold is ")
                         print("The average amount made per bag is ")
                     }

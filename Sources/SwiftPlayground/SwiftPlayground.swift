@@ -170,6 +170,7 @@ let totalSalesWeight = ownerInfoKumara
 let totalBagNumber = ownerInfoBags
 print(totalSalesWeight)
 print(totalBagNumber)
+//check how to add all part of an array together
                         print("The average weight sold is ")
                         print("The average amount made per bag is ")
                     }

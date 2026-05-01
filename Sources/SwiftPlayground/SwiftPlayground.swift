@@ -147,8 +147,14 @@ func addKumara(kumaraInStock: Double) {
 
                     if Option == 4 {
                         print("Previous sales")
+                        ownerInfoBags.enumerated().forEach { index, number in
+print("The \(index+1) customer brought\(number)bags")
+                        }
+                        ownerInfoBags.enumerated().forEach { index, number in
+print("The \(index+1) customer brought \(number)kgs of kumara")
+                        }
 // forEach.ownerInfoBags slide 7 last year
-                        print("The customer brought\(ownerInfoBags) bags and \(ownerInfoKumara)kgs of kumara")
+                        //print("The customer brought\(ownerInfoBags) bags and \(ownerInfoKumara)kgs of kumara")
 
                         print("The average weight sold is ")
                         print("The average amount made per bag is ")

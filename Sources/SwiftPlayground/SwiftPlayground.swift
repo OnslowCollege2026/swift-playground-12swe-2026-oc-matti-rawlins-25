@@ -111,21 +111,19 @@ func addKumara(kumaraInStock: Double) {
         }
     }
     func ownersSummary() {
-        func total(of matrix: [[Double]]) -> Double {
-            var sum = 0.0
-            for row in ownerInfoKumara {
-                for value in row {
-                    sum += value
-                }
-            }
-            return sum
-        }
+    for row in ownerInfoKumara {
+        var total = 0.0
+    for value in row {
+        print(value)
+        total = total + (value)
+    }
+}
 
         let ownerInfoKumara = [
             [0.0],[0.0],[0.0],[0.0],[0.0],[0.0]
             ]
 
-        print(total(of: ownerInfoKumara))
+        print( ownerInfoKumara))
     }
 
     @main

@@ -114,15 +114,15 @@ func addKumara(kumaraInStock: Double) {
     for row in ownerInfoKumara {
         var total = 0.0
     for value in row {
-        print(value)
-        total = total + (value)
+        
+        total = value
         
         print(total)
     }
 }
 
         let ownerInfoKumara = [
-            [0.0],[0.0],[0.0],[0.0],[0.0],[0.0]
+            [0.0],[0.0],
             ]
 
     }

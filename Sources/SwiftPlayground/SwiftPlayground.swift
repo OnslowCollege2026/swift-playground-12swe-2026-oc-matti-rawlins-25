@@ -17,14 +17,14 @@ struct SwiftPlayground {
 //         print((temperature[2][0] + temperature[2][1] + temperature[2][2] + temperature[2][3]) / 4)
 //         print("-------------")
         let table = [
-    [2, 4, 6],
-    [8, 10, 12],
-    [14, 16, 18]
+    [2.0, 4.0, 6.0],
+    // [8, 10, 12],
+    // [14, 16, 18]
 ]
-var total = 0
+var total = 0.0
 for row in table {
     for value in row {
-        print(value)
+        
         total = total + (value)
     }
 }

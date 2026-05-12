@@ -21,12 +21,12 @@ nonisolated(unsafe)
 //create variable to store the amount of bags brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var ownerInfoBags = [0.0]
+    var ownerInfoBag = [0.0]
 
 //create variable to store the amount of kumara brought
 //nonisolated means the program won't crash because this variable is in a shared mutated state
 nonisolated(unsafe)
-    var ownerInfoKumara = [[0.0]]
+    var ownerInfoKumara = [0.0]
 
 ///creates a func to allow the user to add kumara to the shop
 func addKumara(kumaraInStock: Double) {
@@ -96,8 +96,8 @@ func addKumara(kumaraInStock: Double) {
                 print("The cost for \(buyKumaraNumber)kgs of kumara brought is $\(costOfKumara)")
                 print("The cost for \(bagsBroughtQuanity)bags is $\(costOfBags)")
                 print("The total cost is $\(totalCost)")
-                ownerInfoBags.append(bagsBroughtQuanity)
-                ownerInfoKumara.append([kumaraNumber])
+                ownerInfoBag.append(bagsBroughtQuanity)
+                ownerInfoKumara.append(kumaraNumber)
             } else {
                 //if users input is invalid informs user and makes them go again
                 print("That is an invalid input")
@@ -111,21 +111,29 @@ func addKumara(kumaraInStock: Double) {
         }
     }
     func ownersSummary() {
+        var kumaraTotal = 0.0
     for row in ownerInfoKumara {
-        var total = 0.0
+
     for value in row {
         
-        total = value
         
-        print(total)
+        print ("The amount from this sale sold was \(value)")
+        
+    }
+}
+        var bagsTotal = 0.0
+    for row in ownerInfoKumara {
+        
+    for value in row {
+        
+        
+        print ("The amount of bags sold from this sale was \(value)")
+        
     }
 }
 
-        let ownerInfoKumara = [
-            [0.0],[0.0],
-            ]
 
-    }
+
 
     @main
     struct SwiftPlayground {
@@ -191,5 +199,6 @@ func addKumara(kumaraInStock: Double) {
             }
         }
 
+    }
     }
 }

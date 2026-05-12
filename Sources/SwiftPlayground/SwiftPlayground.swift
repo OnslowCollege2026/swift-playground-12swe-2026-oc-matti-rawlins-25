@@ -132,7 +132,9 @@ func addKumara(kumaraInStock: Double) {
     }
 }
 
-
+var ownerInfoKumara = [
+    [0.0],
+]
 
 
     @main

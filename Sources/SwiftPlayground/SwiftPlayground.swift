@@ -122,7 +122,7 @@ func addKumara(kumaraInStock: Double) {
     }
 }
         var bagsTotal = 0.0
-    for row in ownerInfoKumara {
+    for row in ownerInfoBag {
         
     for value in row {
         

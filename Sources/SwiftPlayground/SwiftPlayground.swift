@@ -113,11 +113,11 @@ func createGameState() {
             print("1. close the chest of drawers")
             print("2. pick up the blankets and look under them")
             print("3. take the blankets and close the chest of drawers immediately")
-            let userChoice = inputEngine(minimumChoice: 1, maximumChoice: 3)
-            if userChoice == 1 {
+            let userChoice3 = inputEngine(minimumChoice: 1, maximumChoice: 3)
+            if userChoice3 == 1 {
 
             }
-            if userChoice == 2 {
+            if userChoice3 == 2 {
                 inventory.forEach { item in
                     if item == ("Arcana orb") {
                         print("You already find the item")
@@ -127,7 +127,7 @@ func createGameState() {
                     }
                 }
             }
-            if userChoice == 3 {
+            if userChoice3 == 3 {
                 inventory.forEach { item in
                     if item == ("Blankets") {
                         print("You already find the item")

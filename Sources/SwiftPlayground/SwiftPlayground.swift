@@ -63,10 +63,10 @@ func createGameState() {
     print("What would you like to do first?")
 
     while roomLoop == true {
-        var userChoice = -1
-        while userChoice == -1 {
+    var userChoice = 0
+
             userChoice = inputEngine(minimumChoice: 1, maximumChoice: 5)
-        }
+
         if userChoice == 1 {
             print(
                 "As you gaze out the window you see the familiar skyline of EastPort above you. When you decide to peer down you see at street leave the slow hustle and bustle of people walking towards the market stall on the north side of town."

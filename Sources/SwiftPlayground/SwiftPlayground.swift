@@ -112,95 +112,89 @@ func addKumara(kumaraInStock: Double) {
     }
     func ownersSummary() {
         var kumaraTotal = 0.0
-    for row in ownerInfoKumara {
+        for row in ownerInfoKumara {
 
-    for value in row {
-        
-        
-        print ("The amount from this sale sold was \(value)")
-        
-    }
-}
-        var bagsTotal = 0.0
-    for row in ownerInfoBag {
-        
-    for value in row {
-        
-        
-        print ("The amount of bags sold from this sale was \(value)")
-        
-    }
-}
+            for kumaraValue in [row] {
 
-var ownerInfoKumara = [
-    [0.0],
-]
+                print("The amount of kumara sold in kgs is \(kumaraValue)")
 
+            }
+            var bagsTotal = 0.0
+            for row in ownerInfoBag {
 
-    @main
-    struct SwiftPlayground {
-        static func main() {
+                for bagValue in [row] {
 
-            //allows the while loop in the egg menu to start
-            var isRunning = true
-
-            //sets a minimum number for the user input on using the kumara menu
-            let minimum = 0
-
-            //sets a maximum number for the user input on using the kumara menu
-            let maximum = 6
-
-            //loop while continue till the user press exit
-            while isRunning == true {
-
-                //calls the kumara menu
-                kumaraMenu()
-
-                //lets the user select from kumara menu with limits
-                if let userInput = readLine(), let Option = Int(userInput), Option > minimum,
-                    Option < maximum
-                {
-
-                    if Option == 1 {
-
-                        //let's the user add kumara to the current stock
-                        addKumara(kumaraInStock: 0)
-                    }
-
-                    if Option == 2 {
-
-                        //let's the user sell kumara
-                        sellKumara()
-                    }
-
-                    if Option == 3 {
-
-                        print("current kgs of kumara in the container is \(currentKumaraStock)kgs")
-                    }
-
-                    if Option == 4 {
-                        ownersSummary()
-
-                        if Option == 5 {
-
-                            //thanks the user for buying from the kumara stall
-                            print("Thank you for purchasing from the kumara stall")
-
-                            //stops the while loop when the user exits the interfact
-                            isRunning = false
-
-                        }
-                    } else {
-
-                        //if users input is invalid tell them and makes them run the code again
-                        print("Select a valid option")
-                        continue
-                    }
-
+                    print("The amount of bags sold from this sale was \(bagValue)")
                 }
             }
+
         }
 
-    }
+        @main
+        struct SwiftPlayground {
+            static func main() {
+
+                //allows the while loop in the egg menu to start
+                var isRunning = true
+
+                //sets a minimum number for the user input on using the kumara menu
+                let minimum = 0
+
+                //sets a maximum number for the user input on using the kumara menu
+                let maximum = 6
+
+                //loop while continue till the user press exit
+                while isRunning == true {
+
+                    //calls the kumara menu
+                    kumaraMenu()
+
+                    //lets the user select from kumara menu with limits
+                    if let userInput = readLine(), let Option = Int(userInput), Option > minimum,
+                        Option < maximum
+                    {
+
+                        if Option == 1 {
+
+                            //let's the user add kumara to the current stock
+                            addKumara(kumaraInStock: 0)
+                        }
+
+                        if Option == 2 {
+
+                            //let's the user sell kumara
+                            sellKumara()
+                        }
+
+                        if Option == 3 {
+
+                            print(
+                                "current kgs of kumara in the container is \(currentKumaraStock)kgs"
+                            )
+                        }
+
+                        if Option == 4 {
+                            ownersSummary()
+                            if Option == 5 {
+
+                                //thanks the user for buying from the kumara stall
+                                print("Thank you for purchasing from the kumara stall")
+
+                                //stops the while loop when the user exits the interfact
+                                isRunning = false
+
+                            }
+                        } else {
+
+                            //if users input is invalid tell them and makes them run the code again
+                            print("Select a valid option")
+                            continue
+                        }
+
+                    }
+                }
+            }
+
+        }
     }
 }

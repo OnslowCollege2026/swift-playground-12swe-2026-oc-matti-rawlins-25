@@ -76,33 +76,35 @@ func createGameState() {
             print("You walk up to the mirror and peer into it what do you see?")
 
             print("What is your hair colour? (enter one of the words below)")
-            print("blonde")
-            print("black")
-            print("brown")
-            print("grey")
-            print("red")
-            let userHairColour = readLine()
+            print("1.blonde")
+            print("2.black")
+            print("3.brown")
+            print("4.Grey")
+            print("5.Ginger")
+            print("6.White")
+            let userHairColour = readLine()!
 
             print("What is your eye colour? (enter one of the words below)")
-            print("Brown")
-            print("Green")
-            print("Light blue")
-            print("Gray")
-            print("Amber")
-            let userEyeColour = readLine()
+            print("1.Brown")
+            print("2.Green")
+            print("3.Light blue")
+            print("4.Gray")
+            print("5.Amber")
+            print("6.Red")
+            let userEyeColour = readLine()!
 
             print("What is your skin tone? (enter one of the words below)")
-            print("Pale")
-            print("Tanned")
-            print("Honey")
-            print("Olive")
-            print("Dark")
-            if let userSkinTone = readLine() {
+            print("1.Pale")
+            print("2.Tanned")
+            print("3.Honey")
+            print("4.Olive")
+            print("5.Dark")
+            let userSkinTone = readLine()!
 
-                print(
-                    "As you peer into the mirror you see your \(userEyeColour) eyes wondering your face looking at your clean \(userSkinTone) skin and your messy \(userHairColour) hair"
-                )
-            }
+            print(
+                "As you peer into the mirror you see your \(userEyeColour) eyes wondering your face looking at your clean \(userSkinTone) skin and your messy \(userHairColour) hair"
+            )
+
         }
         if userChoice == 3 {
             print("You look in the chest of drawers and find only a set of blankets.")
@@ -150,22 +152,22 @@ func createGameState() {
                 print("2.Sit down at a table in the dark corner")
                 print("3.Sit down at a table in front of the fire")
                 print("4.Go outside and look up and down the street")
-                let userChoice = inputEngine(minimumChoice: 1, maximumChoice: 4)
-
-                if userChoice == 1 {
-print("You approach the bar ")
+                let userChoice2 = inputEngine(minimumChoice: 1, maximumChoice: 4)
+                if userChoice2 == 1 {
+                    print("You approach the bar ")
                 }
-                if userChoice == 2 {
-
-                }
-                if userChoice == 3 {
+                if userChoice2 == 2 {
 
                 }
-                if userChoice == 4 {
+                if userChoice2 == 3 {
+
+                }
+                if userChoice2 == 4 {
 
                 }
             }
         }
+
         print("")
         print("What do you want to do now?")
         print("1. look out the window")
